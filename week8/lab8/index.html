@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', choice);
+
+            function choice(){
+                let prompt = document.querySelector('#prompt');
+
+                let bn1 = document.querySelector('#bn1');
+                bn1.addEventListener('click', function(){
+                    bn1.style.backgroundColor = 'red';
+                    prompt.innerHTML = 'Incorrect';
+                });
+
+                let bn2 = document.querySelector('#bn2');
+                bn2.addEventListener('click', function(){
+                    bn2.style.backgroundColor = 'red';
+                    prompt.innerHTML = 'Incorrect';
+                });
+
+                let bn3 = document.querySelector('#bn3');
+                bn3.addEventListener('click', function(){
+                    bn3.style.backgroundColor = 'red';
+                    prompt.innerHTML = 'Incorrect';
+                });
+
+                let bn4 = document.querySelector('#bn4');
+                bn4.addEventListener('click', function(){
+                    bn4.style.backgroundColor = 'red';
+                    prompt.innerHTML = 'Incorrect';
+                });
+
+                let bn5 = document.querySelector('#bn5');
+                bn5.addEventListener('click', function(){
+                    bn5.style.backgroundColor = 'green';
+                    prompt.innerHTML = 'Correct!';
+                });
+
+            }
+
+
+            function check(){
+                let ans = document.querySelector('#answer');
+                let prompt2 = document.querySelector('#prompt2');
+                if (ans.value === 'Switzerland') {
+                    ans.style.backgroundColor = 'green';
+                    prompt2.innerHTML = 'Correct!'
+                }else{
+                    ans.style.backgroundColor = 'red';
+                    prompt2.innerHTML = 'Incorrect';
+                }
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the aporoximate ratio of people to sheep in New Zealand?</h3>
+                <p id="prompt"></p>
+                <button id="bn1">6 people per 1 sheep</button>
+                <button id="bn2">3 people per 1 sheep</button>
+                <button id="bn3">1 people per 1 sheep</button>
+                <button id="bn4">1 people per 3 sheep</button>
+                <button id="bn5">1 people per 6 sheep</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinnea pig might get lonely?</h3>
+                <input type="text" placeholder="Input your answer" id="answer">
+                <button id="checkBn" onclick="check()">Check Answer</button>
+                <p id="prompt2"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
