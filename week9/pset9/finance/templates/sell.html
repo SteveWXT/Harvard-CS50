@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select name="sell_stock" id="stock">
+                {% for key,value in stocks.items() %}
+                <option value={{ key }}> {{ key }}: owned {{value}} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">>
+            <input autofocus autocomplete="off" class="form-control" name="sell_amount" placeholder="Amount" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
